@@ -1,6 +1,4 @@
 - How can you scale it to improve throughput?
-    - Horizontal scaling
-    - Multiple Brokers to handle producers and consumers
     - Multiple Partitions
     - Consumer Groups with multiple consumers consuming data from different partitions
 
@@ -10,7 +8,6 @@
 
 - When creating e.g. per minute statistics, how do you handle frames that arrive late or frames with a random timestamp (e.g. hit by a bitflip), describe a strategy?
       - As each event has a time stamp, strategy for this should be to wait before producing the result. Currently, we are publishing the result every 5 seconds. To handle the above scenario, 	we should store the data for 5 seconds but should not publish it right away. We should add some pre-defined extra time to handle late events and should produce the results accordingly.
-
 
 - Ability to write performant code to handle streaming data. measure and document how fast your solution is.
     - Almost 2 seconds to generate metrics (per minute, week, month, year) every 5 seconds and push to Kafka on local machine 
