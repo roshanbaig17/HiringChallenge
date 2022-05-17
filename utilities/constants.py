@@ -1,0 +1,4 @@
+KAFKA_BOOTSTRAP_SERVER='localhost:9092'
+KAFKA_CONSUMER_TOPICS=['consumerTopic']
+KAFKA_PRODUCER_TOPIC='producerTopic'
+KAFKA_CONSUMER_GROUP='consumerGroup'
