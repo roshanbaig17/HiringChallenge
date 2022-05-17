@@ -57,12 +57,20 @@ class MetricsService:
         """
         result_df = pd.concat(df_list)
         result_df['date_time'] = pd.to_datetime(result_df['ts'], unit='s')
+
+        # Per minute Metrics
         per_minute_df = self.__get_metrics_with_frequency(result=result_df, freq='1min')
         self.__publish_result(per_minute_df)
+
+        # Week Metrics
         per_week_df = self.__get_metrics_with_frequency(result=result_df, freq='W')
         self.__publish_result(per_week_df)
+
+        # Month Metrics
         per_month_df = self.__get_metrics_with_frequency(result=result_df, freq='M', dateFormat='%Y-%m')
         self.__publish_result(per_month_df)
+
+        # Year Metrics
         per_year_df = self.__get_metrics_with_frequency(result=result_df, freq='Y', dateFormat='%Y')
         self.__publish_result(per_year_df)
 
