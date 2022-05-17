@@ -19,7 +19,7 @@ For MacOS, go to the installed Kafka folder and follow these steps
 4. Create topic to produce data from python application
    - bin/kafka-topics.sh --create --topic producerTopic --bootstrap-server localhost:9092
 
-To Download the dummy data please use this Lin
+To Download the dummy data please use this Link
 - http://tx.tamedia.ch.s3.amazonaws.com/challenge/data/stream.jsonl.gz
 
 Now we need to run the code and start consuming data
