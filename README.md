@@ -40,10 +40,12 @@ Now we need to run the code and start consuming data
 
 
 Report:
+
 Pandas is being used because it provides dataframes which makes it easier to implement grouping, uniqueness and to count the unique ids.
 
-Converting received json string from Kafka stream to json object, getting the required 'ts' and 'uid' column data and converting it to DataFrame to generate metrics.
+Approach:
 
+Converting received json string from Kafka stream to json object, getting the required 'ts' and 'uid' column data and converting it to DataFrame to generate metrics.
 Producing data after every 5 seconds because at that time we have 99.99% of correct data. We read the Kafka stream, convert it to DataFrame and after every 5 seconds produce the results.
 
 
